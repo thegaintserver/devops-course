@@ -7,7 +7,7 @@ pipeline {
         stage('Test stage') {
             steps {
                 echo "hi everyone"
-                echo "printing $(env)"
+                echo "printing ${env}"
             }
         }
     }
