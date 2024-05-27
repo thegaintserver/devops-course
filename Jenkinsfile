@@ -1,27 +1,13 @@
 pipeline {
     agent any
+    environment {
+        env = 'deploying_to_prod'
+    }
     stages {
-        stage('build') {
+        stage('Test stage') {
             steps {
-                echo 'Hello World'
-                echo "hi anent"
-                sh 'ls -larth /'
-            }
-        }
-        stage('test') {
-            steps {
-                echo 'Hello World'
-                echo "hi anent"
-            }
-        }
-        stage('deploy') {
-            steps {
-                echo 'Hello World'
-                echo "hi anent"
-                sh '''
-                ls -larth ./
-                ls /var/jenkins | wc -l
-                '''
+                echo "hi everyone"
+                echo "printing $(env)"
             }
         }
     }
